@@ -1,0 +1,18 @@
+<h1><%= @task.title %></h1>
+
+<div id="task-details">
+  <p><%= @task.details %></p>
+
+  <div class="completed-checkbox">
+    <%= check_box_tag 'task[completed]', '1', @task.completed, disabled: true %> Completed
+  </div>
+
+  <div class="action-buttons">
+    <%= link_to "Edit task", edit_task_path(@task), class: "edit" %>
+    <%= link_to "Destroy task", task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class: "delete" %>
+  </div>
+
+  <div class="link-container">
+    <%= link_to "Task list", tasks_path %>
+  </div>
+</div>
